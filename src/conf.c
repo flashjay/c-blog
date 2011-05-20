@@ -41,7 +41,7 @@ void parse_conf()
 	char       *key, *val, buf[256];
 	const char *value;
 		
-	fp = fopen("../conf/blog.conf", "r");
+	fp = fopen("./conf/blog.conf", "r");
 	if(!fp) exit(0) ;
 	
 	map = tcmapnew();

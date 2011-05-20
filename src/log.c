@@ -5,9 +5,9 @@ FILE *debug_log;
 
 void log_init() 
 {
-	debug_log = fopen("../log/debug.log", "w");
+	debug_log = fopen("./log/debug.log", "w");
 
-	if(debug_log == NULL) exit;
+	if(debug_log == NULL) exit(2);
 }
 
 void log_finish()

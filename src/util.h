@@ -1,6 +1,9 @@
 #ifndef __UTIL_H__
 #define __UTIL_H__
 
+#ifndef ulong
+#define ulong unsigned long
+#endif
 
 void ltrim(char *str);
 

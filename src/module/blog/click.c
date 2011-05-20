@@ -173,6 +173,7 @@ void blog_click_count(struct env_t *_SERVER)
 	
 }
 
+/*独立线程做点击数同步处理*/
 void *blog_click_sync(void *arg)
 {
 	int    rc;

@@ -420,7 +420,7 @@ void panel_article_update(struct env_t *_SERVER)
 			strftime(buf, sizeof(buf), "%Y/%m/%d", localtime(&visit));
 
 			//如果有上传的文件,就把上传的文件,从临时目录移动目标目录
-			len = snprintf(path, sizeof(path), "./attachment/%s/%llu/", buf, id);
+			len = snprintf(path, sizeof(path), "./attachment/%s/%llu/", buf, (long long unsigned int)id);
 			
 			if(!is_dir(path)) mkpath(_SERVER->mp, path, 0777);
 			if(!strchr(file, '|'))
