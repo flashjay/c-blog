@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="gbk">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>文章列表</title>
+<link href="/css/admin.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript">
+<!--
+
+function checkAll(obj)
+{
+	var check =	document.getElementsByName("id[]");
+	for(i=0; i<check.length; i++)
+	{
+		check[i].checked = obj.checked;
+	}
+}
+
+
+
+//-->
+</script>
+</head>
+<body>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr height="50">
+    <td class="header">文章列表</td>
+  </tr>
+  <tr>
+    <td class="title">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="main">
+	  <table id="tab" width="100%" border="0" align="center" cellpadding="3" cellspacing="0" class="tableborder">
+          <tr> 
+            <td height="25" colspan="8" class="menu">文章列表</td>
+		  </tr>
+            <tr> 
+            <td width="9%" height="25">类别</td>
+            <td width="3%">评论</td>
+			<td width="22%" height="25">标题</td>
+			<td width="11%" height="25">录入时间</td>
+			<td width="11%" height="25">留言数</td>
+			 <td width="6%">点击</td>
+            <td width="3%">编辑</td>
+            <td width="35%">删除</td>
+            </tr>  		  
+			<!-- @@data@@ -->    
+		  <tr> 
+            <td width="9%" height="25"><a href="/panel-article-list-@@sortdir@@.html">@@sortname@@</a></td>
+            <td width="3%"><a href="/panel-comment-list-@@art_id@@.html">打开</a></td>
+			<td width="22%" height="25"><a href="/article-read-@@sortdir@@-@@art_id@@.html" target="_blank">@@title@@</a></td>
+			<td width="11%" height="25">@@dt@@</td>
+			<td width="11%" height="25">@@comment_num@@</td>
+			<td width="6%" height="25">@@hit@@</td>
+		    <td width="3%"><a href="/panel-article-update-@@art_id@@.html">编辑</a></td>
+		    <td width="35%"><a href="/panel-article-delete-@@art_id@@.html" onclick="return confirm('确定删除这条信息吗?');">删除</a></td>
+		  </tr>
+		  <!-- @@data@@ -->    
+		  <tr>
+		  <td height="25" colspan="8" style="padding-left:20px">total: [@@total@@]&nbsp;&nbsp;<div class="page">@@page@@</div></td>
+        </tr>
+        </table>
+	<br /></td>
+  </tr>
+  <tr>
+    <td class="foot">七夜博客&nbsp;<font color="#6A6B9B">RC2.0</font></td>
+  </tr>
+</table>
+<script language="javascript">
+
+function func() 
+{
+	var ptr = document.getElementById("tab").getElementsByTagName("tr");
+
+	for (i=1;i<ptr.length+1;i++) 
+	{ 
+			ptr[i-1].style.background = (i%2>0) ? "#FFFFFF":"#EEEEEE";
+	}
+}
+
+func();
+
+
+</script>
+</body>
+</html>

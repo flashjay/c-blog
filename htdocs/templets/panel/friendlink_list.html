@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="gbk">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>友情链接列表</title>
+<link href="/css/admin.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/xmlhttprequest.js"></script>
+<script language="JavaScript">
+<!--
+
+function checkAll(obj)
+{
+	var check =	document.getElementsByName("id[]");
+	for(i=0; i<check.length; i++)
+	{
+		check[i].checked = obj.checked;
+	}
+}
+
+
+
+//-->
+</script>
+</head>
+<body>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr height="50">
+    <td class="header">友情链接列表</td>
+  </tr>
+  <tr>
+    <td class="title">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="main">
+	  <table id="tab" width="100%" border="0" align="center" cellpadding="3" cellspacing="0" class="tableborder">
+          <tr> 
+            <td height="25" colspan="6" class="menu">文章列表</td>
+		  </tr>
+            <tr> 
+            <td width="21%" height="25">&nbsp;&nbsp;网站名字</td>
+			<td width="22%" height="25">网址</td>
+			<td width="18%" height="25">录入时间</td>
+			<td width="12%" height="25">排序</td>
+			 <td width="3%">编辑</td>
+            <td width="24%">删除</td>
+            </tr>  		  
+			<!-- @@data@@ -->    
+		  <tr> 
+            <td width="21%" height="25">@@site@@</td>
+			<td width="22%" height="25">@@url@@</td>
+			<td width="18%" height="25">@@dt@@</td>
+			<td width="12%" height="25"><input type="text" value="@@pos@@" init="@@pos@@" size="3" onChange="move(this, @@id@@);" /></td>
+			<td width="3%" height="25"><a href="/panel-friendlink-update-@@id@@.html">编辑</a></td>
+		    <td width="24%"><a href="/panel-friendlink-delete-@@id@@.html" onclick="return confirm('确定删除这条信息吗?');">删除</a></td>
+	      </tr>
+		  <!-- @@data@@ -->    
+        </table>
+		<br /></td>
+  </tr>
+  <tr>
+    <td class="foot">七夜博客&nbsp;<font color="#6A6B9B">RC2.0</font></td>
+  </tr>
+</table>
+<script language="javascript">
+
+function move(obj, id)
+{
+	var re = /^[1-9]+.?[1-9]*$/; 
+	
+	if(!re.test(obj.value))
+	{
+		alert("排序号只能为大于0的数字");
+		obj.value = obj.attributes['init'].nodeValue;
+		obj.focus();
+		return false;
+	}
+	
+	var req = new XMLHttpRequest();
+	if (req)
+	{
+		req.onreadystatechange = function() 
+		{
+			if (req.readyState == 4 && (req.status == 200 || req.status == 304)) 
+			{
+				location.reload();
+			}
+		};
+	  
+		req.open("GET", "/panel-friendlink-move-"+id+"-"+obj.value+".html");
+		req.send(null);
+	}
+
+	return false;
+}
+
+function func() 
+{
+	var ptr = document.getElementById("tab").getElementsByTagName("tr");
+
+	for (i=1;i<ptr.length+1;i++) 
+	{ 
+			ptr[i-1].style.background = (i%2>0) ? "#FFFFFF":"#EEEEEE";
+	}
+}
+
+func();
+
+
+</script>
+</body>
+</html>

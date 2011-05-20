@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="gbk">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>分类列表</title>
+<link href="/css/admin.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/xmlhttprequest.js"></script>
+<script language="JavaScript">
+<!--
+
+function checkAll(obj)
+{
+	var check =	document.getElementsByName("id[]");
+	for(i=0; i<check.length; i++)
+	{
+		check[i].checked = obj.checked;
+	}
+}
+
+
+
+//-->
+</script>
+</head>
+<body>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr height="50">
+    <td class="header">分类列表</td>
+  </tr>
+  <tr>
+    <td class="title">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="main">
+	  <table id="tab" width="100%" border="0" align="center" cellpadding="3" cellspacing="0" class="tableborder">
+          <tr> 
+            <td height="25" colspan="6" class="menu">分类列表</td>
+		  </tr>
+            <tr> 
+            <td width="6%" height="25">ID</td>
+			<td width="9%" height="25">分类名</td>
+			<td width="9%" height="25">分类目录名</td>
+			 <td width="7%">序列号</td>
+            <td width="5%">编辑</td>
+            <td width="64%">删除</td>
+            </tr>  		  
+			<!-- @@data@@ -->    
+		  <tr> 
+            <td width="6%" height="25">@@sid@@</td>
+			<td width="9%" height="25"><a href="/panel-article-list-@@sortdir@@.html">@@sortname@@</a></td>
+			<td width="9%" height="25"><a href="/panel-article-list-@@sortdir@@.html">@@sortdir@@</a></td>
+			<td width="7%" height="25"><input type="text" value="@@pos@@" init="@@pos@@" size="3" onChange="move(this, @@sid@@);" /></td>
+		    <td width="5%"><a href="/panel-category-update-@@sid@@.html">编辑</a></td>
+		    <td width="64%"><a href="/panel-category-delete-@@sid@@.html" onclick="return confirm('确定删除这条信息吗?');">删除</a></td>
+	      </tr>
+		  <!-- @@data@@ -->    
+        </table>
+	<br /></td>
+  </tr>
+  <tr>
+    <td class="foot">七夜博客&nbsp;<font color="#6A6B9B">RC2.0</font></td>
+  </tr>
+</table>
+<script language="javascript">
+
+function move(obj, id)
+{
+	var re = /^[1-9]+.?[1-9]*$/; 
+	
+	if(!re.test(obj.value))
+	{
+		alert("排序号只能为大于0的数字");
+		obj.value = obj.attributes['init'].nodeValue;
+		obj.focus();
+		return false;
+	}
+	
+	var req = new XMLHttpRequest();
+	if (req)
+	{
+		req.onreadystatechange = function() 
+		{
+			if (req.readyState == 4 && (req.status == 200 || req.status == 304)) 
+			{
+				location.reload();
+			}
+		};
+	  
+		req.open("GET", "/panel-category-move-"+id+"-"+obj.value+".html");
+		req.send(null);
+	}
+
+	return false;
+}
+
+function func() 
+{
+	var ptr = document.getElementById("tab").getElementsByTagName("tr");
+
+	for (i=1;i<ptr.length+1;i++) 
+	{ 
+			ptr[i-1].style.background = (i%2>0) ? "#FFFFFF":"#EEEEEE";
+	}
+}
+
+func();
+
+
+</script>
+</body>
+</html>

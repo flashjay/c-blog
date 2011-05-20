@@ -1,0 +1,20 @@
+#PREFIX=/root/blog/cgi/blog
+#FCGI_HOME=/usr/local/fcgi
+#SQLITE3_HOME=/usr/local/sqlite
+#TOKYOCABINET_HOME=/usr/local/tokyocabinet
+
+CFLAGS=-I./src -I$(FCGI_HOME)/include -I$(SQLITE3_HOME)/include -I$(TOKYOCABINET_HOME)/include
+LDFLAGS=-L$(FCGI_HOME)/lib -L$(SQLITE3_HOME)/lib -L$(TOKYOCABINET_HOME)/lib
+LIBS=-lfcgi -lsqlite3 -ltokyocabinet -lpthread -luuid
+
+blog  :
+	gcc -o cblog src/blog.c src/conf.c src/log.c src/util.c src/env.c src/tpllib.c src/rbtree.c src/assign.c src/dlmalloc.c src/module/blog/comment.c src/module/blog/click.c src/module/panel/comment.c src/module/panel/article.c src/module/panel/user.c src/module/panel/friendlink.c src/module/blog/article.c src/module/panel/category.c $(CFLAGS) $(LDFLAGS) $(LIBS) -O2  -D_BUILD_HTML -DMSPACES -DUSE_DL_PREFIX -DUSE_TRANSACTION
+clean :
+	rm -rf ./cblog
+install :
+	test -d $(PREFIX) || mkdir $(PREFIX) 
+	cp -r ./conf $(PREFIX) 
+	cp -r ./log $(PREFIX) 
+	cp -r ./htdocs $(PREFIX) 
+	cp -r ./db $(PREFIX) 
+	mv cblog $(PREFIX)/htdocs

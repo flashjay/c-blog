@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+    <title>@@title@@--七夜的开源研究</title>
+	<meta name="keywords" content="php,js,mysql,七夜,生活,blog,博客,@@keyword@@"/>
+	<link rel="shortcut icon" href="/images/Battery.ico" />
+
+<script type='text/javascript' src='lighter/mootools.core.js'></script> 
+<script type='text/javascript' src='lighter/Lighter.js'></script>
+<script type='text/javascript' src='lighter/Fuel.php.js'></script>
+<script type='text/javascript' src='lighter/Fuel.js.js'></script>
+
+	<link href="lighter/Flame.standard.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="/css/blue.css" type="text/css" media="screen" title="default"/>
+	<script type="text/javascript" src="/js/xmlhttprequest.js"></script>
+    
+<style type="text/css">.recentcomments a{display:inline !important;padding: 0 !important;margin: 0 !important;}</style>
+</head>
+<script type="text/javascript">
+<!--
+var newScript  = document.createElement("script");
+newScript.type = "text/javascript";
+newScript.src  = "/click-once-@@art_id@@-" + Math.random()+".html";
+
+document.getElementsByTagName("head")[0].appendChild(newScript);	
+//-->
+</script>
+<body>
+
+<!--#wrapper:start-->
+	<div id="wrapper">
+    
+<!--#header:start-->
+    	<div id="header">
+        	<h1><a href="/">Home</a></h1>
+
+<!--#navigation:start-->
+            <div id="navigation">
+            	<ul>
+                	<li><a href="./" class="current" title="loongSSO">loongSSO</a></li>
+                    <li class="page_item page-item-2"><a href="/" title="Tokyocabinet For PHP">Tokyocabinet For PHP</a></li>
+					<li class="page_item page-item-2"><a href="/" title="Memcache For PHP">Memcache For PHP</a></li>
+                </ul>
+            </div>
+<!--#navigation:end-->
+<!--#search:start-->
+            <div id="search">
+				<form method="get" id="searchform" action="./blog?module=search&action=list">
+                <input type="text" name="s" id="s" />
+                <input type="submit" id="searchsubmit" value="search" />
+
+                </form>
+            </div>
+<!--#search:end-->
+        </div>
+<!--#header:end--><!--#content:start-->
+    	<div id="content">
+                        	<div class="entry" id="post-22">
+                        	<h2>@@title@@</h2>
+                <p class="meta-header">@@dt@@&nbsp;&nbsp;<a href="/article-list-@@sortdir@@.html" >@@sortname@@</a></p>
+                <p>@@content@@</p>
+                <div class="meta-footer">
+                	<ul>
+                                            </ul>
+                    <div class="clear-left"></div>
+				</div>
+			                
+            </div>
+            
+            
+<!-- You can start editing here. -->
+
+<div id="comments"><img src="http://www.cnblogs.com/images/cnblogs_com/hunts/miscellary/ajax-loader_2.gif" />&nbsp;留言数据加载中....</div>
+
+
+
+<div id="respond" class="box">
+
+<h3>Leave a Reply</h3>
+
+<iframe name="hidden_frame" id="hidden_frame" style="display:none;"></iframe>
+<form action="/comment-insert.html" method="post" target="hidden_frame" id="commentform" onsubmit="return validate(this);">
+
+
+<div><label for="author"><small>Name</small></label><br /><input type="text" name="author" id="author" value="" size="22" tabindex="1" aria-required='true' />
+</div>
+<p><label for="comments"><small>Comments</small></label><br /><textarea name="content" id="content" cols="50" rows="6" tabindex="4"></textarea></p>
+
+<p><input name="id" id="id" type="hidden" value="@@art_id@@" /><input name="Comment_Insert" type="submit" id="Comment_Insert" tabindex="5" value="提 交" class="box" />
+
+</p>
+
+</form>
+</div>                  	
+        </div>
+<!--#content:end-->
+				<div id="sidebar">
+        	<div class="about box">
+                    	            	<h3>About ME</h3>
+            	<p><img src="/images/46f6.jpg" class='avatar avatar-80 photo' height='80' width='80' /> </p>
+                <div class="clear"></div>
+            
+                        </div>
+            <div class="feeds"><img src="/images/rss.gif">&nbsp;&nbsp;RSS</div>
+            
+			<div class="col">
+            <div class="box"><h3>分类</h3>
+			<ul>
+			<!-- @@classic@@ -->
+				<li class="cat-item cat-item-3"><a href="/article-list-@@sortdir@@.html">@@sortname@@</a></li>
+			<!-- @@classic@@ -->
+			</ul>
+		</div>
+		<div class="box">			<h3>原创精彩文章链接交换</h3>			
+		<ul id="recentcomments">
+		<!-- @@guestbook@@ -->
+			<li class="recentcomments"><a href="/article/read/@@@@art_id@@@@#comment">@@comment@@</a></li>
+			<!-- @@guestbook@@ -->
+
+		</ul>
+		</div>            </div>
+            <div class="col2">
+            		<div class="box">			<h3>推荐文章</h3>			<ul>
+					  	<!-- @@recommend@@ -->
+						<li><a href="/article-read-@@catid@@-@@art_id@@-@@filename@@.html">@@title@@</a></li>
+						<!-- @@recommend@@ -->
+						</ul>
+		</div>
+		<div class="box"><h3>友情链接</h3>
+	<ul class='xoxo blogroll'>
+	<!-- @@friendlink@@ -->
+<li><a href="@@url@@" target="_blank">@@site@@</a></li>
+<!-- @@friendlink@@ -->
+
+	</ul>
+</div>
+			</div>
+        </div>    </div>
+    	<div id="footer">
+        	<p>
+				&copy; 2010 Powered by 七夜BLOG系统(c-blog2.0),使用Nginx、FastCGI、C、SQLite3构成          	
+            </p>
+			        </div>
+
+<script type="text/javascript">
+<!--
+
+$$('pre').light({ altLines: 'hover' });
+
+String.prototype.trim = function() 
+{
+	return this.replace(/^\s+|\s+$/g, "");
+}
+
+function validate(obj)
+{
+	var comments, names;
+	
+	names    = obj.author.value.trim();
+	comments = obj.content.value.trim();
+
+	if(comments.length < 10)
+	{
+		alert("请输入评论内容");
+		return false;
+	}
+
+	return true;
+}
+
+function comment_clear()
+{
+	var obj;
+
+	obj = document.getElementById("commentform");
+	obj.reset();
+}
+
+function loading(page)
+{
+	var req = new XMLHttpRequest();
+	if (req)
+	{
+		req.onreadystatechange = function() 
+		{
+			if (req.readyState == 4 && (req.status == 200 || req.status == 304)) 
+			{
+				document.getElementById("comments").innerHTML = req.responseText; 
+			}
+		};
+	  
+		req.open("GET", "/comment-list-@@art_id@@-"+page+".html");
+		req.send(null);
+	}
+
+	return false;
+}
+
+loading(1);
+
+//google 统计代码
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4799280-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+//-->
+</script>
+</body>
+</html>

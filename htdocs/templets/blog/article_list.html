@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+    <title>七夜的开源研究</title>
+	<link rel="shortcut icon" href="/images/Battery.ico" />
+	<link rel="stylesheet" href="/css/style.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="/css/blue.css" type="text/css" media="screen" title="default"/>
+    
+	<script type='text/javascript' src='lighter/mootools.core.js'></script> 
+<script type='text/javascript' src='lighter/Lighter.js'></script>
+<script type='text/javascript' src='lighter/Fuel.php.js'></script>
+<script type='text/javascript' src='lighter/Fuel.js.js'></script>
+<link href="lighter/Flame.standard.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">.recentcomments a{display:inline !important;padding: 0 !important;margin: 0 !important;}</style>
+
+</head>
+<body>
+
+<!--#wrapper:start-->
+	<div id="wrapper">
+    
+<!--#header:start-->
+    	<div id="header">
+        	<h1><a href="/">Home</a></h1>
+
+<!--#navigation:start-->
+            <div id="navigation">
+            	<ul>
+                	<li><a href="./" class="current" title="loongSSO">loongSSO</a></li>
+                    <li class="page_item page-item-2"><a href="/" title="Tokyocabinet For PHP">Tokyocabinet For PHP</a></li>
+					<li class="page_item page-item-2"><a href="/" title="Memcache For PHP">Memcache For PHP</a></li>
+                </ul>
+            </div>
+<!--#navigation:end-->
+<!--#search:start-->
+            <div id="search">
+				<!-- <form method="get" id="searchform" action="./blog?module=search&action=list"> -->
+                <input type="text" name="s" id="s" />
+                <input type="submit" id="searchsubmit" value="search" />
+
+                <!-- </form> -->
+            </div>
+<!--#search:end-->
+        </div>
+<!--#header:end--><!--#content:start-->
+    	<div id="content">
+                <!-- @@data@@ -->
+                <div class="entry">
+        
+		
+            	<h2><a href="/article-read-@@sortdir@@-@@art_id@@-@@filename@@.html">@@title@@</a></h2>
+                <p class="meta-header">@@dt@@&nbsp;&nbsp;Hit: <span name="hit[]" val="@@art_id@@" id="hit[]">@@hit@@</span>&nbsp;&nbsp;<a href="/article-list-@@sortdir@@.html" >@@sortname@@</a></p>
+                
+                <p>@@c@@</p>
+                
+                <div class="meta-footer">
+                	<ul>
+                        <li><a href="/article-read-@@sortdir@@-@@art_id@@-@@filename@@.html">Read More</a></li>
+                        <li><a href="/article-read-@@sortdir@@-@@art_id@@-@@filename@@.html#comment">@@comment_num@@ Comments</a></li>
+                                            </ul>
+                 <div class="clear-left"></div>   
+				</div>
+        
+        	</div>
+            <!-- @@data@@ -->
+          <div class="pagination">
+        <div class="prev-page"></div>
+                total: [@@total@@]&nbsp;&nbsp;<div class="page">@@page@@</div>
+            </div>
+        </div>
+<!--#content:end-->
+				<div id="sidebar">
+        	<div class="about box">
+                    	            	<h3>About ME</h3>
+            	<p><img src="/images/46f6.jpg" class='avatar avatar-80 photo' height='80' width='80' /> 一直想要个自己的BLOG,到今天这个多年的愿望终于实现了。开这个BLOG主要和各位兄弟交流一下技术。欢迎各位兄弟来踢馆,嘿嘿。我的MAIL: lijinxing#Gmail.com PHP高级研究QQ群: 62116204</p>
+                <div class="clear"></div>
+            
+                        </div>
+            <div class="feeds"><img src="/images/rss.gif">&nbsp;&nbsp;RSS</div>
+            
+			<div class="col">
+            <div class="box"><h3>分类</h3>
+			<ul>
+			<!-- @@classic@@ -->
+				<li class="cat-item cat-item-3"><a href="/article-list-@@sortdir@@.html">@@sortname@@</a></li>
+			<!-- @@classic@@ -->
+			</ul>
+		</div>
+		<div class="box">			<h3>原创精彩文章链接交换</h3>			<ul id="recentcomments">	
+			<!-- @@guestbook@@ -->
+			<li class="recentcomments"><a href="./blog?module=article&action=read&id=@@id@@#comment">@@comment@@</a></li>
+			<!-- @@guestbook@@ --></ul>
+		</div>            </div>
+            <div class="col2">
+            		<div class="box">			<h3>推荐文章</h3>			
+					  <ul>
+					  	<!-- @@recommend@@ -->
+						<li><a href="/article-read-@@catid@@-@@art_id@@-@@filename@@.html">@@title@@</a></li>
+						<!-- @@recommend@@ -->
+					</ul>
+		</div>
+		<div class="box"><h3>友情链接</h3>
+	<ul class='xoxo blogroll'>
+	<!-- @@friendlink@@ -->
+<li><a href="@@url@@" target="_blank">@@site@@</a></li>
+<!-- @@friendlink@@ -->
+
+	</ul>
+</div>
+			</div>
+        </div>    </div>
+    	<div id="footer">
+        	<p>
+				&copy; 2009 Powered by 七夜BLOG系统(c-blog2.0),使用Nginx、FastCGI、C、SQLite3构成         	
+            </p>
+			        </div>
+
+<script type="text/javascript">
+<!--
+
+$$('pre').light({ altLines: 'hover' });
+
+function assign(str, len)
+{
+	var i;
+	var j;
+	var s1;
+	var data;
+	
+	if(len < 2) return false;
+
+	s1  = str.substring(0, (len-1));
+	s1 += "}";
+	
+	data = eval("("+s1+")");
+	
+	var ll = document.getElementsByName("hit[]");
+
+	for(i in data)
+	{
+		for(j=0; j<ll.length; j++)
+		{
+			if(i == ll[j].attributes['val'].nodeValue)
+			{
+				ll[j].innerHTML = data[i][0];
+			}
+		}
+	}
+}
+
+
+function init()
+{
+	var id = "";
+	var ll = document.getElementsByName("hit[]");
+
+	for(var i=0; i<ll.length; i++)
+	{
+		id += ll[i].attributes['val'].nodeValue + ",";
+	}
+
+	var newScript  = document.createElement("script");
+	newScript.type = "text/javascript";
+	newScript.src  = "/click-count-"+id+"-" + Math.random()+".html";
+	
+	document.getElementsByTagName("head")[0].appendChild(newScript);
+}
+
+init();
+
+
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4799280-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+//-->
+</script>
+</body>
+</html>

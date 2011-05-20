@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="gbk">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>添加分类</title>
+<link href="/css/admin.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr height="50">
+    <td class="header">添加分类</td>
+  </tr>
+  <tr>
+    <td class="title">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="main">
+	  <form action="/panel-category-insert.html" method="post" onsubmit="return validation(this);">
+	  <table id="tab" width="100%" border="0" align="center" cellpadding="3" cellspacing="0" class="tableborder">
+          <tr> 
+            <td height="25" colspan="2" class="menu"> 添加分类</td>
+		  </tr>
+	   <tr> 
+            <td width="18%" height="25" align="center">已有分类</td>
+            <td width="82%" height="25"><select name="sortlevel" id="sortlevel"><!-- @@classic@@ --><option value="@@sortdir@@">@@sortname@@</option><!-- @@classic@@ --></select></td>
+       </tr> 
+	   <tr> 
+            <td width="18%" height="25" align="center">分类名</td>
+            <td width="82%" height="25"><input name="sortname" type="text" id="sortname"></td>
+       </tr> 
+	   <tr> 
+            <td width="18%" height="25" align="center">分类目录名</td>
+            <td width="82%" height="25"><input name="sortdir" type="text" id="sortdir"></td>
+       </tr>
+       	   <tr> 
+            <td width="18%" height="25" align="center">排序号</td>
+            <td width="82%" height="25"><input name="pos" type="text" id="pos"></td>
+       </tr>
+		  <tr align="center">
+		  <td height="25" colspan="2"><input name="Category_Insert" type="submit" id="Category_Insert" value="提 交">
+    &nbsp;&nbsp;&nbsp;<input type="reset" name="Submit" value="重 置"></td>
+        </tr>
+        </table>
+    </form>
+		<br /></td>
+  </tr>
+  <tr>
+    <td class="foot">七夜BLOG&nbsp;<font color="#6A6B9B">RC2.0</font></td>
+  </tr>
+</table>
+<script language="javascript">
+
+function func() 
+{
+	var ptr = document.getElementById("tab").getElementsByTagName("tr");
+
+	for (i=1;i<ptr.length+1;i++) 
+	{ 
+		ptr[i-1].style.background = (i%2>0) ? "#FFFFFF":"#EEEEEE";
+	}
+}
+
+function validation(obj)
+{
+	var re = /^[1-9]+.?[1-9]*$/; 
+	
+	if(obj.site.value.length < 2)
+	{
+		obj.site.focus();
+		alert("网站名字不能为空");
+		return false;
+	}
+	else if(obj.url.value.length < 3)
+	{
+		obj.url.focus();
+		alert("网址不能为空");
+		return false;
+	}
+	else if(!re.test(obj.pos.value))
+	{
+		obj.pos.focus();
+		alert("排序号只能为大于0的数字");
+		return false;
+	}
+
+	return true;
+}
+
+func();
+
+
+</script>
+
+</body>
+</html>

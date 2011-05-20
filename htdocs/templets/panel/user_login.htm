@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="gbk">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>七夜技术博客后台管理</title>
+<link href="/css/admin.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<iframe name="hidden_frame" id="hidden_frame" style="display:none;"></iframe>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr height="50">
+    <td class="header">七夜技术博客后台管理</td>
+  </tr>
+  <tr>
+    <td class="title">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="login"><!--  target="hidden_frame" -->
+	  <form action="/panel-user-login.html" method="post" target="hidden_frame" onsubmit="return validation(this);">
+	  <table id="tab" width="100%" border="0" align="center" cellpadding="3" cellspacing="0" class="tableborder">
+          <tr> 
+            <td height="25" colspan="3" class="menu">七夜技术博客后台管理</td>
+		  </tr>
+            <tr> 
+			<td width="26%" rowspan="3" align="center"><img src="/images/silver/msg.png" alt="login" width="79" height="88" /></td>
+            <td width="28%" height="25" align="center">用户名字</td>
+            <td width="46%" height="25"><input name="username" type="text" id="username"></td>
+            </tr>  		  
+		  <tr> 
+		    <td width="28%" height="25" align="center"> 用户密码 </td>
+            <td width="46%" height="25"><input name="password" type="password" id="password"></td>
+		  </tr>
+		  <!-- 
+		   <tr bgcolor="#EEEEEE"> 
+		    <td width="28%" height="25" align="center"> 验证码 </td>
+            <td width="46%" height="25"><input name="code" type="text" id="code" size="5" maxlength="5">&nbsp;&nbsp;<img src="../authimg.php" style="cursor:hand" onClick="this.src='../authimg.php'"></td>
+	      </tr>
+		  -->
+		  <tr align="center">
+		  <td height="25" colspan="3"><input name="User_Login" type="submit" id="User_Login" value="登陆">
+    &nbsp;&nbsp;&nbsp;<input type="reset" name="Submit" value="重 置"></td>
+        </tr>
+        </table>
+	  </form>
+		<br /></td>
+  </tr>
+  <tr>
+    <td class="foot">七夜博客&nbsp;<font color="#6A6B9B">RC2.0</font></td>
+  </tr>
+</table>
+<script language="javascript">
+
+function func() 
+{
+        var ptr = document.getElementById("tab").getElementsByTagName("tr");
+
+        for (i=1;i<ptr.length+1;i++) 
+        { 
+                ptr[i-1].style.background = (i%2>0) ? "#FFFFFF":"#EEEEEE";
+        }
+}
+
+function validation(obj)
+{
+	if(obj.username.value.length < 2)
+	{
+		obj.username.focus();
+		alert("用户名不能为空");
+		return false;
+	}
+	else if(obj.password.value.length < 3)
+	{
+		obj.password.focus();
+		alert("密码不能为空");
+		return false;
+	}
+
+	return true;
+}
+
+func();
+
+
+</script>
+</body>
+</html>

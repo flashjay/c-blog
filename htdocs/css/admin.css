@@ -1,0 +1,106 @@
+body
+{
+	margin:0px;
+	padding:0px;
+	background-color:#E5E5E5;
+	font-size:11.5px;
+	font-family:arial,"宋体";
+}
+a						
+{ 
+	text-decoration: none; color: 
+	#003366 
+}
+a:hover	
+{ 
+	text-decoration: underline
+}
+.page a {
+float:left;
+margin:5px 1px 0 1px;
+width:20px;
+height:20px;
+color:#999;
+font:12px/20px 宋体;
+text-align:center;
+text-decoration:none;
+border:1px solid #9898BA;
+}
+
+.page_link {
+float:left;
+margin:5px 1px 0 1px;
+width:20px;
+height:20px;
+color:#999;
+background-color:#D4D0C8; 
+font:12px/20px 宋体;
+text-align:center;
+text-decoration:none;
+border:1px solid #9898BA;
+}
+
+.page a:hover {
+position:relative;
+margin:0 -9px 0 -9px;
+padding:0 5px;
+width:30px;
+height:30px;
+font:bold 16px/30px 宋体;
+color:#000;
+border:1px solid black;
+background:#eee;
+}
+input,select,textarea	
+{ 
+	font-weight: normal; 
+	background-color: #F8F8F8
+}
+.header
+{
+	/*width:100%;*/
+	font-size:18px;
+	font-weight:bold;
+	font-family:arial,"宋体";
+	padding-left:50px;
+	background-color:#CECFFF;
+}
+.title
+{
+	/*width:100%;*/
+	background-color:#A6A7D7;
+}
+.main
+{
+	/*width:100%;*/
+	padding-top :10px;
+	padding-left:10px;
+	padding-right:10px;
+	background-color:#EFEFEF;
+}
+.foot
+{
+	height:28px;
+	text-align:center;
+	background-color:#DBDBDB;
+}
+.menu	
+{ 
+	color: #000000; 
+	text-align:center;
+	background-color: #9999B8;
+}
+.tableborder
+{
+	background: #D6E0EF; 
+	border: 1px solid #CFD6C8 
+}
+.login
+{
+	width:100%;
+	padding-top :10px;
+	padding-left:400px;
+	padding-right:400px;
+	background-color:#EFEFEF;
+}
+.se{background:expression(this.rowIndex%2==0 ? "#FFFFFF":"#EEEEEE")}

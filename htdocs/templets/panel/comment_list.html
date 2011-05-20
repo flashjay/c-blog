@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="gbk">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>分类列表</title>
+<link href="/css/admin.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript">
+<!--
+
+function checkAll(obj)
+{
+	var check =	document.getElementsByName("id[]");
+	for(i=0; i<check.length; i++)
+	{
+		check[i].checked = obj.checked;
+	}
+}
+
+function long2ip ( proper_address ) 
+{
+	// http://kevin.vanzonneveld.net
+	// + original by: _argos
+	// * example 1: long2ip( 3221234342 );
+	// * returns 1: ‘192.0.34.166′
+
+	var output = false;
+
+	if ( !isNaN ( proper_address ) && ( proper_address >= 0 || proper_address <= 4294967295 ) )
+	{
+		output = Math.floor (proper_address / Math.pow ( 256, 3 ) ) + "." +
+		Math.floor ( ( proper_address % Math.pow ( 256, 3 ) ) / Math.pow ( 256, 2 ) ) + "." +
+		Math.floor ( ( ( proper_address % Math.pow ( 256, 3 ) ) % Math.pow ( 256, 2 ) ) / Math.pow ( 256, 1 ) ) + "." +
+		Math.floor ( ( ( ( proper_address % Math.pow ( 256, 3 ) ) % Math.pow ( 256, 2 ) ) % Math.pow ( 256, 1 ) ) / Math.pow ( 256, 0 ) );
+	}
+
+	return output;
+}
+
+
+//-->
+</script>
+</head>
+<body>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr height="50">
+    <td class="header">评论列表</td>
+  </tr>
+  <tr>
+    <td class="title">&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="main">
+	  <table id="tab" width="100%" border="0" align="center" cellpadding="3" cellspacing="0" class="tableborder">
+          <tr> 
+            <td height="25" colspan="6" class="menu">评论列表</td>
+		  </tr>
+            <tr> 
+            <td width="6%" height="25">ID</td>
+			<td width="7%" height="25">用户</td>
+			<td width="11%" height="25">提交时间</td>
+			 <td width="7%">IP</td>
+            <td width="5%">删除</td>
+            <td width="64%">内容</td>
+            </tr>  		  
+			<!-- @@data@@ -->    
+		  <tr> 
+            <td width="6%" height="25">@@id@@</td>
+			<td width="7%" height="25">@@author@@</td>
+			<td width="11%" height="25">@@dt@@</td>
+			<td width="7%" height="25"><script>document.write(long2ip(@@addr@@));</script></td>
+		    <td width="5%"><a href="/panel-comment-delete-@@id@@.html" onclick="return confirm('确定删除这条评论吗?');">删除</a></td>
+		    <td width="64%">@@c@@</td>
+	      </tr>
+		  <!-- @@data@@ -->    
+        </table>
+	<br /></td>
+  </tr>
+  <tr>
+    <td class="foot">七夜博客&nbsp;<font color="#6A6B9B">RC2.0</font></td>
+  </tr>
+</table>
+<script language="javascript">
+
+
+function func() 
+{
+	var ptr = document.getElementById("tab").getElementsByTagName("tr");
+
+	for (i=1;i<ptr.length+1;i++) 
+	{ 
+			ptr[i-1].style.background = (i%2>0) ? "#FFFFFF":"#EEEEEE";
+	}
+}
+
+func();
+
+
+</script>
+</body>
+</html>

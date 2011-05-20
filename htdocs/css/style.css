@@ -1,0 +1,131 @@
+* { margin: 0; padding: 0; }
+input { border: 1px solid #1c3872; padding: 2px; }
+body { margin: 0px auto; padding: 0; font: normal 12px "ËÎÌו",arial; text-align: center; color: #434343; background: #EEEEEE; }
+/* HTML ======================================= */
+	p { line-height: 18px; padding: 0 0 15px 0; }
+	a { font-weight: 900; text-decoration: none; }
+	a:hover { text-decoration: underline; }
+	fieldset { border: 1px solid #ccc; padding: 10px; margin-top: 20px; }
+		fieldset label { font-size: 11px; display: block; font-weight: bold; padding: 2px 0px; text-transform: uppercase; }
+			fieldset label span { color: red; }
+			fieldset legend { font-size: 14px; font-weight: 900; padding: 0 5px; color: #000; }
+			fieldset em { display: block; font-style: normal; color: #999; padding: 5px 1px; font-size: 10px;}
+			fieldset input, fieldset select { width: 50%; border: 1px solid #ccc; padding: 3px; }
+			fieldset input#submit { width: auto; }
+			fieldset textarea { width: 95%; border: 1px solid #ccc; padding: 3px; }
+			
+/* #wrapper ======================================= */
+	#wrapper { margin: 0px auto; width: 960px; text-align: left; }
+/* #header ======================================= */
+		#header { height: 30px; -moz-border-radius-bottomleft: 3px; -moz-border-radius-bottomright: 3px; }
+			#header h1 { margin: 0; padding: 0; }
+				#header h1 a { color: #fff; font-size: 16px; font-weight: 400; text-decoration: none; padding: 4px 30px 0px 14px; float: left; }
+/* #navigation ======================================= */
+			#navigation ul { display: block; list-style: none; margin: 4px 0 0; padding: 0; float: left; font-weight: 900; }
+				#navigation ul li { display: block; float: left; padding: 0; margin: 0; font-size: 11px; }
+					#navigation ul li a { display: block; padding: 1px 8px 2px; color: #fff; text-decoration: none; }
+					#navigation ul li a.current, #navigation ul li.current_page_item a { -moz-border-radius: 3px; }
+					#navigation ul li a:hover { color: #fff; text-decoration: underline; }
+					
+			#search { float: right; width: 200px; padding-top: 3px; }
+				#search input { width: 130px; }
+				#search input#searchsubmit { padding: 2px; font-size: 10px; width: 40px;}
+				
+
+/* #content ======================================= */		
+		#content { margin: 10px 0 0 0; float: left; width: 600px; }
+			#content .entry { padding: 10px 0 0; clear: left; border-bottom: 1px solid #d3dae8; margin-bottom: 20px; }
+				#content .entry h2 { letter-spacing: -1px; font: 24px Helvetica,Arial,sans-serif; margin: 1px; padding: 0; font-weight: 400; }
+					#content .entry h2 a { color: #1e3b78; text-decoration: none; border-bottom: 1px solid #fff; font-weight: 400; }
+				#content .entry h3 { font: 400 18px Arial, Helvetica, sans-serif; font-style: italic; }
+				#content .entry pre { overflow: auto; width: 590px; padding:10px 3px; }
+				#content .entry ul { list-style: circle; margin: 4px 0 0 15px; padding: 18px; }
+				#content .entry ol { list-style: decimal; margin: 4px 0 0 15px; padding: 18px; }
+					#content .entry ul li { padding: 1px 0; }
+					#content .entry ol li { padding: 1px 0; }
+					#content .entry ul ul { list-style: square; margin: 1px 0 0 20px; padding: 0; }
+					#content .entry ol ol { list-style: lower-roman; margin: 1px 0 0 20px; padding: 0; }
+				#content .meta-header { font-size: 12px; }
+
+				#content .meta-footer { margin: 15px 0 0; }
+					#content .meta-footer ul { font-size: 10px; display: block; list-style: none; margin: 0; padding: 0;  }
+						#content .meta-footer ul li { float: left; padding: 0; margin: 0 2px 0 0; -moz-border-radius-bottomleft: 3px; -moz-border-radius-bottomright: 3px; }
+							#content .meta-footer ul li a { display: block; padding: 2px 7px; color: #fff; text-decoration: none; }
+							#content .meta-footer ul li a:hover { color: #fff; -moz-border-radius-bottomleft: 3px; -moz-border-radius-bottomright: 3px; }		
+
+		#content #comments { clear: left; padding-top: 10px; }
+			#content #comments h3 { font: 500 16px tahoma; margin: 1px; padding: 0; }
+			#content #comments .meta-comment { font-size: 11px; margin-bottom: 10px; }
+				#content #comments .meta-comment a { text-decoration: none; }
+			#content #comments .commentlist { list-style: none; margin: 0; padding: 0; }
+				#content #comments .commentlist li { background: #F7F7F7; border-bottom: 1px solid #ddd; padding: 10px; }
+				#content #comments .commentlist li.alt { background-color: #fff; }
+		#content #respond { clear: left; margin-top: 30px; padding: 15px; }
+			#content #respond h3 { font: bold 16px tahoma; margin: 1px; padding: 5px; border: 1px solid #ccc; background-color: #fff;}
+		#content #respond input, #content #respond textarea { border: 1px solid #ccc; padding: 4px; }
+		#content #respond div { padding: 5px 0; }
+		.cp { font: 400 9px/16px Arial, Helvetica, sans-serif; text-transform: uppercase; }	
+		label { text-transform: uppercase; font-weight: 900; }	
+		#content .tutorials { background: #f9f9f9; border: 1px solid #d6d3ca; margin: 5px 1px 10px; padding: 10px; text-align: center; }
+			#content .tutorials a, #content .tutorials a:link { text-decoration: none; width: 174px;  margin:0px 3px; text-align: center; }
+			#content .tutorials a img { border: 0; }
+			
+		#content ul.delicious { padding: 5px 0; }
+			#content .delicious-tags { font-size: 11px; }
+			
+		#content .pagination { clear: left; padding: 20px 0 5px; }
+			#content .pagination a { text-decoration: none; }
+			#content .pagination .prev-page { float: left; }
+			#content .pagination .next-page { float: right; }
+		#content .portfolio { clear: left; margin: 10px 0px 8px; }
+			#content .portfolio img.portfolio-image { float: left; width: 211px; height: 160px; }
+			#content .portfolio .portfolio-detail { float: right; width: 370px; }
+				#content .portfolio .portfolio-detail h4 { margin: 1px 0; padding: 0; font-size: 14px; }
+					#content .portfolio .portfolio-detail h4 a, #content .portfolio .portfolio-detail h3 a:link { text-decoration: none; }
+				#content .portfolio .portfolio-detail strong { display: block; color: #3b5999; margin: 7px 0px 3px; }
+				#content .portfolio .portfolio-detail span { display: block; font-size: 11px; }
+/* #sidebar ======================================= */
+		.box { background-color: #f7f7f7; border: 1px solid #e0e0e0; -moz-border-radius: 4px; margin-bottom: 15px; }
+		#sidebar { margin: 10px 0 0 20px; float: left; width: 340px; }
+			#sidebar h3 { text-transform: uppercase; font: 900 11px Tahoma, Arial, Helvetica, sans-serif; padding: 5px 10px; background-color: #e0e0e0; float: left; width: 318px; }
+			#sidebar .about p { padding: 10px; font-size: 11px; clear: left; }
+				.avatar { display: inline; float: left; margin: 0 10px 0 0; padding: 3px; background-color: #fff; }
+
+			#sidebar .feeds { padding: 0 0 10px; clear: left; margin-top: -5px; }
+
+			#sidebar .col { float: left; width: 165px; margin-right: 5px; display: inline; }
+			#sidebar .col2 { float: left; width: 165px; margin-left: 5px; display: inline;}
+			#sidebar .col a, #sidebar .col2 a { font-weight: 400; }
+					#sidebar .col ul, #sidebar .col2 ul { list-style: none; padding: 0; text-align: center; }
+					div#calendar_wrap, div.textwidget, ul#recentcomments { padding: 10px; text-align: left; }
+					div#calendar_wrap table { width: 100%; }
+					iv#calendar_wrap table a { font-weight: 900; }
+						#sidebar .col ul#recentcomments li, #sidebar .col2 ul#recentcomments li { width: 149px; padding: 5px 7px; line-height: 14px; border-bottom: 1px solid #ccc; }
+						#sidebar .col ul#recentcomments li a, #sidebar .col2 ul#recentcomments li a { font-weight: 900; }
+						#sidebar .col ul#recentcomments li a:hover, #sidebar .col2 ul#recentcomments li a:hover { background-color: #fff; }
+						#sidebar .col h3, #sidebar .col2 h3 { float: left; width: 143px; }
+						#sidebar .col ul li, #sidebar .col2 ul li { width: 163px; text-align: left; font-size: 11px; }
+						#sidebar .col ul ul, #sidebar .col2 ul ul { padding: 0; }
+						#sidebar .col ul li a, #sidebar .col2 ul li a { display: block; padding: 2px 10px; }
+						#sidebar .col ul li a:hover, #sidebar .col2 ul li a:hover { background-color: #f1f1f1; }
+/* #footer ======================================= */
+		#footer { margin-top: 20px; padding: 0 0 10px; font-size: 11px; clear: both; text-align:center; float: left; width: 100%; background-color: #e5e5e5; border-top: 1px solid #b5b5b5; }
+		#footer p { padding: 5px 0 0 0; border-top: 1px solid #fcfcfc; }
+/* misc ======================================= */
+	.clear-both { clear: both; }
+	.gap { height: 8px; }
+	.clear { clear: both; padding: 10px 0 0; }
+h2.pagetitle { font: 400 12px/18px Arial, Helvetica, sans-serif; }
+
+#content #comments .commentlist { clear: both; }
+#content #comments .commentlist ul { list-style: none; } 
+#content #comments .commentlist #respond { background-color: #fff; border: 1px solid #ccc; padding: 10px; margin-bottom: 5px; }
+#content #comments .commentlist ul li { border: 1px solid #ccc; padding: 10px; }
+.reply a { float: right; margin: -40px 0 0 0; font: 400 10px Arial, Helvetica, sans-serif; padding: 3px 6px; background-color: #fff; -moz-border-radius: 3px; border: 1px solid #ccc; }
+.reply a:hover { border: 1px solid #333; }
+code { font: 400 9px Tahoma, Arial, Helvetica, sans-serif; color: #666; }
+.vcard em { font-style: normal; padding-bottom: 10px; display: block; font-weight: 900; }
+.vcard small { font: 9px/9px Tahoma, Arial, Helvetica, sans-serif; color: #999; }
+#met { padding: 4px 10px; float: left; width: 578px; margin: 0 0 20px; }
+#met h3 { float: left; }
+#content #comments #met .meta-comment { float: right; margin-bottom: 0; }
