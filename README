@@ -1,3 +1,23 @@
 
 code from http://code.google.com/p/php-tokyocabinet/downloads/detail?name=blog.tar.bz2&can=2&q=#makechanges
 
+
+Mac OS X 下需要另外安装 uuid 库, 安装过程中可能会碰到一些问题:
+
+1、e2fsprogs
+
+http://nchc.dl.sourceforge.net/project/e2fsprogs/e2fsprogs/1.41.14/e2fsprogs-1.41.14.tar.gz, http://sourceforge.net/projects/e2fsprogs/files/e2fsprogs/1.41.14/e2fsprogs-1.41.14.tar.gz/download
+
+
+make 编译后, 直接拷贝 libuuid.a 到/usr/local/lib 下, 
+
+这样, 这个c-blog才能顺利在Mac下完成编译.(-luuid)
+
+2、通过spawn-fcgi启动使用tcp socket而非unix socket来绑定fastcgi的监听
+
+ spawn-fcgi -f ./cblog -s /tmp/fcgi-blog.sock
+ ->
+ spawn-fcgi -f ./cblog -p 9000 -a 127.0.0.1
+
+ 原因未知, 
+

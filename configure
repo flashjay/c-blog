@@ -1022,18 +1022,22 @@ if test ! -f "${FLAGS_fcgi}/include/fcgi_stdio.h"; then
   exit 1
 fi
 if test ! -f "${FLAGS_fcgi}/lib/libfcgi.so"; then
-  echo "error: cannot find ${FLAGS_fcgi}/lib/libfcgi.so;"
-  exit 1
+  if test ! -f "${FLAGS_fcgi}/lib/libfcgi.dylib"; then
+    echo "error: cannot find ${FLAGS_fcgi}/lib/libfcgi.so;"
+    exit 1
+  fi
 fi
 
 # check SQLite3 lib 
 if test ! -f "${FLAGS_sqlite}/include/sqlite3.h"; then
-  echo "error: cannot find ${FLAGS_sqlite}/include/sqlite3.h;"
-  exit 1
+    echo "error: cannot find ${FLAGS_sqlite}/include/sqlite3.h;"
+    exit 1
 fi
 if test ! -f "${FLAGS_sqlite}/lib/libsqlite3.so"; then
+ if test ! -f "${FLAGS_sqlite}/lib/libsqlite3.dylib"; then
   echo "error: cannot find ${FLAGS_sqlite}/lib/libsqlite3.so;"
   exit 1
+ fi
 fi
 
 
@@ -1043,8 +1047,10 @@ if test ! -f "${FLAGS_tokyocabinet}/include/tcutil.h"; then
   exit 1
 fi
 if test ! -f "${FLAGS_tokyocabinet}/lib/libtokyocabinet.so"; then
+ if test ! -f "${FLAGS_tokyocabinet}/lib/libtokyocabinet.dylib"; then
   echo "error: cannot find ${FLAGS_tokyocabinet}/lib/libtokyocabinet.so;"
   exit 1
+ fi
 fi
 
 
